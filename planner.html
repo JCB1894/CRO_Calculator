@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planificador A/B - Tamaño de muestra y duración</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <nav class="top-nav" aria-label="Navegación principal">
+      <a class="nav-link" href="index.html">Calculadora de resultados A/B</a>
+      <a class="nav-link active" href="planner.html">Planificador de tamaño de muestra</a>
+    </nav>
+
+    <h1>Planificador de test A/B</h1>
+    <p class="subtitle">Calcula el tamaño de muestra por variante para test A/B o A/B/n. La duración se calcula de forma opcional si indicas tráfico.</p>
+
+    <section class="card">
+      <h2>Parámetros estadísticos</h2>
+      <div class="grid two-cols">
+        <label>
+          Tipo de test
+          <select id="testType">
+            <option value="ab">A/B (2 variantes)</option>
+            <option value="abn">A/B/n (más de 2 variantes)</option>
+          </select>
+        </label>
+
+        <label>
+          Número de variantes a testear
+          <input id="variantCount" type="number" min="2" step="1" value="2" />
+        </label>
+
+        <label>
+          Conversion rate actual (%) – baseline
+          <input id="baselineRate" type="number" min="0.01" max="99.99" step="0.01" value="10" />
+        </label>
+
+        <label>
+          Modo de entrada para la variante test
+          <select id="expectedMode">
+            <option value="final">Conversión final esperada (%)</option>
+            <option value="relative">Mejora relativa esperada (%)</option>
+          </select>
+        </label>
+
+        <label id="expectedFinalField">
+          Conversion rate esperado (%)
+          <input id="expectedRate" type="number" min="0.01" max="99.99" step="0.01" value="12" />
+        </label>
+
+        <label id="relativeLiftField" class="hidden">
+          Mejora relativa esperada (%)
+          <input id="relativeLift" type="number" min="0.01" step="0.01" value="20" />
+        </label>
+
+        <label>
+          Nivel de significancia (α)
+          <input id="alpha" type="number" min="0.0001" max="0.2" step="0.0001" value="0.05" />
+        </label>
+
+        <label>
+          Potencia estadística (1-β)
+          <input id="power" type="number" min="0.5" max="0.9999" step="0.0001" value="0.8" />
+        </label>
+      </div>
+    </section>
+
+    <section class="card optional-card">
+      <h2>Tráfico del experimento (opcional)</h2>
+      <p class="note compact">Si lo rellenas, estimamos duración en días y semanas. Si no, mostramos solo tamaño muestral.</p>
+      <label>
+        Tráfico mensual total del experimento
+        <input id="monthlyTraffic" type="number" min="1" step="1" placeholder="Ej: 60000" />
+      </label>
+    </section>
+
+    <section class="card">
+      <button id="calculateBtn" type="button" class="btn-primary">Calcular</button>
+    </section>
+
+    <section class="card" aria-live="polite">
+      <h2>Resultados</h2>
+      <div id="plannerResultContent">Completa los datos y pulsa <strong>Calcular</strong>.</div>
+    </section>
+  </main>
+
+  <script src="planner.js"></script>
+</body>
+</html>
