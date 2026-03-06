@@ -205,80 +205,52 @@ input, select {
 
 .hidden { display: none; }
 
-.decision-box.neutral {
-  border-color: #c7d2fe;
-  background: linear-gradient(140deg, #eef2ff, #e0e7ff);
-}
-
-.decision-label {
-  display: block;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #334155;
-  margin-bottom: 0.2rem;
-}
-
-.decision-box strong {
-  font-size: 1.02rem;
-}
-
-.note { color: var(--muted); margin-top: 0.9rem; }
-.error {
-  color: #b91c1c;
-  font-weight: 600;
-}
-
-.hidden { display: none; }
-
-.top-nav {
-  display: flex;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
-}
-
-.nav-link {
-  text-decoration: none;
-  color: #3730a3;
-  border: 1px solid #c7d2fe;
-  background: #eef2ff;
-  border-radius: 999px;
-  padding: 0.4rem 0.8rem;
-  font-weight: 600;
-}
-
-.nav-link.active {
-  color: #fff;
-  background: var(--accent);
-  border-color: var(--accent);
-}
-
-.btn-primary {
+.primary-btn {
   border: 0;
-  border-radius: 10px;
   background: var(--accent);
   color: #fff;
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 0.65rem 1rem;
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  font-weight: 700;
   cursor: pointer;
 }
 
-.btn-primary:hover {
-  filter: brightness(1.06);
+.formula-box {
+  margin-top: 1rem;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  padding: 0.8rem;
+  background: #f9faff;
 }
 
-.optional-card {
-  border-style: dashed;
-}
-
-.compact {
+.formula-box h3 {
   margin-top: 0;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.45rem;
 }
 
-input[readonly] {
-  background: #f1f5f9;
-  color: #475569;
+.formula-box p {
+  margin: 0.35rem 0;
+}
+
+.page-nav {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin: 1.1rem 0 0.3rem;
+}
+
+.page-link {
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  color: var(--muted);
+  background: #fff;
+  font-weight: 600;
+}
+
+.page-link.active {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
 }
