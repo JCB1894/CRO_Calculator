@@ -353,6 +353,8 @@ function calculate() {
   renderResult(result, target, vA, vB);
 }
 
+
+
 el.method.addEventListener('change', () => {
   syncMethodUi();
   calculate();
