@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora A/B · Impacto monetario</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Impacto monetario de test A/B</h1>
+    <p class="subtitle">Calcula uplift, ingresos incrementales y proyección anual.</p>
+
+    <nav class="page-nav" aria-label="Calculadoras">
+      <a class="page-link" href="index.html">Análisis estadístico</a>
+      <a class="page-link active" href="impacto-monetario.html">Impacto monetario</a>
+      <a class="page-link" href="estimacion-muestra.html">Estimación de muestra</a>
+    </nav>
+
+    <section class="card">
+      <h2>Entradas</h2>
+      <div class="grid two-cols">
+        <label>Visitantes en el test
+          <input id="moneyVisitors" type="number" min="0" step="1" placeholder="Ej. 50000" />
+        </label>
+        <label>CR control
+          <input id="moneyCrControl" type="number" min="0" step="any" placeholder="Ej. 10 o 0.10" />
+        </label>
+        <label>CR variante
+          <input id="moneyCrVariant" type="number" min="0" step="any" placeholder="Ej. 12 o 0.12" />
+        </label>
+        <label>Average Order Value (AOV)
+          <input id="moneyAov" type="number" min="0" step="any" placeholder="Ej. 75" />
+        </label>
+        <label>Tráfico mensual (proyección)
+          <input id="moneyMonthlyTraffic" type="number" min="0" step="1" placeholder="Ej. 200000" />
+        </label>
+      </div>
+      <button id="moneyCalculate" class="primary-btn" type="button">Calcular</button>
+      <p id="moneyError" class="error hidden"></p>
+    </section>
+
+    <section class="card" aria-live="polite">
+      <h2>Resultados monetarios</h2>
+      <div id="moneyResults" class="result-grid"></div>
+      <div id="moneyFormulas" class="formula-box hidden"></div>
+    </section>
+  </main>
+
+  <script src="impacto-monetario.js"></script>
+</body>
+</html>
